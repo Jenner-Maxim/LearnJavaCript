@@ -32,6 +32,7 @@ function validate() {
     text = "Submit successfull";
   }
   document.getElementById("message").innerHTML = text;
+  // input.innerHTML = text;
 }
 
 // window.alert(5 + 3);
@@ -153,3 +154,119 @@ function infinityfunc() {
 var numbMethod = new Date();
 var numbMethodNumb = Number(numbMethod);
 document.getElementById("numbers").innerHTML = numbMethodNumb;
+
+function putin() {
+  var input = document.getElementById("getinput").value;
+  input.innerHTML = set.value("43");
+}
+
+function mathFunction() {
+  document.getElementById("math").innerHTML = Math.pow(43, 2);
+}
+
+function dateFunction() {
+  var days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  document.getElementById("dates").innerHTML = days;
+
+  var dates = getUTCDate();
+  // dates.setDate(dates.getDate() + 100);
+  var d = new Date(dates);
+
+  var today, someday, text;
+  today = new Date();
+  someday = new Date();
+  someday.setFullYear(2100, 7, 14);
+  if (someday > today) {
+    text = "Todat is before August 14, 2100";
+  } else {
+    text = "Today is after August 14, 2100.";
+  }
+  document.getElementById("dates").innerHTML = days;
+}
+
+function login() {
+  var nameInput = document.getElementById("name").value;
+  var passwordInput = document.getElementById("password").value;
+  if (nameInput == "Maxim" && passwordInput == 12) {
+    document.getElementById("login").innerHTML = nameInput;
+  } else if (nameInput == "") {
+    document.getElementById("errorName").innerHTML = "Please Enter a Name!";
+  } else if (passwordInput == "") {
+    document.getElementById("errorPassword").innerHTML =
+      "Please Enter a Password!";
+  } else {
+    // document.getElementById("login").innerHTML = "Wrong Password!";
+  }
+  // document.getElementById('login').innerHTML = nameInput + passwordInput;
+}
+
+function arrayFunction() {
+  var myNames = ["Kagheni", "Jenner", "Maximillien", "Sire", "Sad"];
+  /*   var index;
+  for (index = 0; index < myNames.length; index++) {
+    text += myNames[index];
+    document.getElementById("array").innerHTML = text;
+  } */
+  // myNames.unshift("Sire");
+  // myNames[1] = "Sire";
+  // delete myNames[0];
+  // myNames.splice(1, 1);
+  // myNames.reverse();
+  var numbSort = [23, 43, 6, 34, 35, 64];
+  var stuff = new Array("Laptop", "Disk", "Flash", 12, 54);
+  var concatArray = myNames.concat(numbSort, stuff);
+  numbSort.sort(function (a, b) {
+    return b - a;
+  });
+  var sliceName = myNames.slice(2,3)
+  document.getElementById("array").innerHTML = myNames.toString();
+
+  function isArray(x) {
+    return x.constructor.toString().indexOf("Array") > -1;
+  }
+  // document.getElementById("array").innerHTML = text;
+
+  /*   
+  stuff[1] = "Disk Drive";
+  myNames[1] = stuff;
+  myNames[2] = Date.now;
+  myNames[7] = "Sire"; */
+
+  /*   var personObject = {
+    firstName: "Kagheni",
+    lastName: "Maxim",
+    age: 21,
+  }; */
+}
+
+function booleanFunction(){
+  var tt = true / "HU";
+  document.getElementById('bool').innerHTML = Boolean(tt);
+}
+
+function conditionFunction(){
+/*   hour = 13;
+  if (hour < 12){
+    greeting = "Good morning";
+  } else if (hour < 17){
+    greeting = "Good day";
+  } else {
+    greeting = "Good evening";
+  }
+  document.getElementById('cond').innerHTML = greeting; */
+
+  if (Math.random() < 0.5){
+    text = "<a href='../index.html'>Visit W3Schools</a>";
+  } else {
+    text = "<a href='http://wwf.org/'>Visit WWF</a>";
+  }
+  document.getElementById('cond').innerHTML = text;
+}

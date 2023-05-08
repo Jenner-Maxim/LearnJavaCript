@@ -26,7 +26,12 @@
 
     <button onclick="document.write(5 +2)">Document Write</button> -->
 
-    <p id="answer"></p>
+    <p>Enter a number between 1 and 10</p>
+    <input id="numb">
+    <button onclick="validate()">Submit</button>
+    <p id="message"></p>
+
+<!--     <p id="answer"></p>
 
     <p id="type"></p>
 
@@ -39,7 +44,7 @@
     <p id="object"></p>
 
     <p id="scope"></p>
-
+ -->
     <button onclick="getElementById('event').innerHTML = Date()">The time is?</button>
     <p id="event"></p>
     <button onclick="this.innerHTML = Date()">The time is?</button>
@@ -52,6 +57,34 @@
     <p id="numbers"></p>
 
     <button onclick="infinityfunc()">Infinity</button>
+
+<!--     <input id="getinput" value="" />
+    <button onclick="putin()">Set</button> -->
+
+    <p id="math"></p>
+    <button onclick="mathFunction()">Math</button>
+
+    <p id="dates"></p>
+    <button onclick="dateFunction()">Date</button>
+
+    <br>
+    <input id="name" type="text" required />
+    <p id="errorName"></p>
+    <input id="password" type="password" />
+    <p id="errorPassword"></p>
+    <button onclick="login()">Login</button>
+    <p id="login"></p>
+
+    <button onclick="arrayFunction()">Array</button>
+    <p id="array"></p>
+
+    <button onclick="booleanFunction()">Boolean</button>
+    <p id="bool"></p>
+
+    <button onclick="conditionFunction()">Condition</button>
+    <p id="cond"></p>
+
+    <button>Switch</button>
 
     <script src="index.js"></script>
 </body>
