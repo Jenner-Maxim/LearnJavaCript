@@ -226,7 +226,7 @@ function arrayFunction() {
   numbSort.sort(function (a, b) {
     return b - a;
   });
-  var sliceName = myNames.slice(2,3)
+  var sliceName = myNames.slice(2, 3);
   document.getElementById("array").innerHTML = myNames.toString();
 
   function isArray(x) {
@@ -247,13 +247,13 @@ function arrayFunction() {
   }; */
 }
 
-function booleanFunction(){
+function booleanFunction() {
   var tt = true / "HU";
-  document.getElementById('bool').innerHTML = Boolean(tt);
+  document.getElementById("bool").innerHTML = Boolean(tt);
 }
 
-function conditionFunction(){
-/*   hour = 13;
+function conditionFunction() {
+  /*   hour = 13;
   if (hour < 12){
     greeting = "Good morning";
   } else if (hour < 17){
@@ -263,10 +263,96 @@ function conditionFunction(){
   }
   document.getElementById('cond').innerHTML = greeting; */
 
-  if (Math.random() < 0.5){
+  if (Math.random() < 0.5) {
     text = "<a href='../index.html'>Visit W3Schools</a>";
   } else {
     text = "<a href='http://wwf.org/'>Visit WWF</a>";
   }
-  document.getElementById('cond').innerHTML = text;
+  document.getElementById("cond").innerHTML = text;
+}
+
+function switchFunction() {
+  var day;
+  switch (new Date().getDay()) {
+    case 0:
+      day = "Sunday";
+      break;
+    case 1:
+      day = "Monday";
+      break;
+    case 2:
+      day = "Tuesday";
+      break;
+    case 3:
+      day = "Wednesday";
+      break;
+    case 4:
+      day = "Thursday";
+      break;
+    case 5:
+      day = "Friday";
+      break;
+    case 6:
+      day = "Saturday";
+  }
+  document.getElementById("switch").innerHTML = day;
+
+  var text;
+  switch (new Date().getDay()) {
+    default:
+      text = "Looking forward to the Weekend";
+      break;
+    case 6:
+      text = "Today is Saturday";
+      break;
+    case 0:
+      text = "Todat is Sunday";
+  }
+  document.getElementById("switch").innerHTML = text;
+
+  var textCase;
+  switch (new Date().getDay()) {
+    case 2:
+    case 3:
+      textCase = "The Weekend ended longtime ago";
+      break;
+    case 4:
+    case 5:
+      textCase = "Soon it is Weekend";
+      break;
+    case 6:
+    case 0:
+      textCase = "It is Weekend";
+      break;
+    default:
+      textCase = "Looking forward to the Weekend";
+  }
+  document.getElementById("switch").innerHTML = textCase;
+
+  var x = "0";
+  switch (x) {
+    case 0:
+      textZero = "Off";
+      break;
+    case 1:
+      textZero = "On";
+      break;
+    default:
+      textZero = "No value found";
+  }
+  document.getElementById("switch").innerHTML = textZero;
+
+  var fruit = "Apple";
+  var message;
+  switch (fruit) {
+    case "Banana":
+      message = "Hello";
+      break;
+    case "Apple":
+      message = "Welcome";
+      break;
+    default:
+      message = "Neither Banana or Apple";
+  }
+  document.getElementById('switch').innerHTML = message;
 }
