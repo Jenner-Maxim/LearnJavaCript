@@ -354,7 +354,7 @@ function switchFunction() {
     default:
       message = "Neither Banana or Apple";
   }
-  document.getElementById('switch').innerHTML = message;
+  document.getElementById("switch").innerHTML = message;
 }
 
 function forFunction() {
@@ -370,14 +370,14 @@ function forFunction() {
   }
 
   // var len;
-  for (i = 0, len = cars.length, text = ""; i < len; ++i){
+  for (i = 0, len = cars.length, text = ""; i < len; ++i) {
     text += cars[i] + "<br>";
   }
 
   var i = 0;
   var len = cars.length;
   // var text = "";
-  for (; i < len;) {
+  for (; i < len; ) {
     text += cars[i] + "<br>";
     i++;
   }
@@ -385,17 +385,32 @@ function forFunction() {
   var person = {
     fname: "Kagheni",
     lname: "Maxim",
-    age: 21
+    age: 21,
   };
   var text = "";
   var x;
-  for (x in person){
+  for (x in person) {
     text += person[x] + "<br>";
   }
 
   var txt = "JavaScript";
-  for (x of txt){
+  for (x of txt) {
     document.write(x + "<br>");
   }
   // document.getElementById("forloop").innerHTML = text;
+}
+
+function whileFunction() {
+  var i = 0;
+  var text = "";
+/*   while (i < 10) {
+    text += "<br>The number is " + i;
+    i++;
+  } */
+
+  do {
+    text += "<br>The number is " + i;
+    i++;
+  } while (i < 10);
+  document.getElementById("whileloop").innerHTML = text;
 }
