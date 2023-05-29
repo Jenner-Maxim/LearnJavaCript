@@ -356,3 +356,46 @@ function switchFunction() {
   }
   document.getElementById('switch').innerHTML = message;
 }
+
+function forFunction() {
+  var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+  // var text;
+  // var i;
+  for (i = 0; i < cars.length; i++) {
+    text += cars[i] + "<br>";
+  }
+
+  for (i = 0; i < 5; i++) {
+    text += "The numbers is " + i + "<br>";
+  }
+
+  // var len;
+  for (i = 0, len = cars.length, text = ""; i < len; ++i){
+    text += cars[i] + "<br>";
+  }
+
+  var i = 0;
+  var len = cars.length;
+  // var text = "";
+  for (; i < len;) {
+    text += cars[i] + "<br>";
+    i++;
+  }
+
+  var person = {
+    fname: "Kagheni",
+    lname: "Maxim",
+    age: 21
+  };
+  var text = "";
+  var x;
+  for (x in person){
+    text += person[x] + "<br>";
+  }
+
+  var txt = "JavaScript";
+  for (x of txt){
+    document.write(x + "<br>");
+  }
+  // document.getElementById("forloop").innerHTML = text;
+}
