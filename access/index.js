@@ -417,7 +417,7 @@ function whileFunction() {
 
 function breakFunction() {
   var text = "";
-/*   for (var i = 0; i < 10; i++) {
+  /*   for (var i = 0; i < 10; i++) {
     if (i === 4) {
       continue;
     }
@@ -433,4 +433,92 @@ function breakFunction() {
     text += cars[3] + "<br>";
   }
   document.getElementById("break").innerHTML = text;
+}
+
+function dataTypeFunction() {
+  /*   document.getElementById("dataType").innerHTML = 
+  typeof "Kagheni" + "<br>" +
+  typeof 3.14 + "</br>" +
+  typeof NaN + "<br>" +
+  typeof false + "</br>" +
+  typeof [1,3,4,5] + "<br>" +
+  typeof {name: "Kagheni", age: 43} + "</br>" +
+  typeof new Date ()+ "</br>" +
+  typeof function(){} + "</br>" +
+  typeof myCar + "</br>" +
+  typeof null; */
+
+  /*   document.getElementById("dataType").innerHTML = 
+  "Kagheni".constructor + "<br>" +
+  (2.42).constructor + "</br>" +
+  false.constructor + "</br>" +
+  [1,2,3,4].constructor + "</br>" +
+  {name: 'Kageni', age: 43}.constructor + "</br>" +
+  new Date().constructor + "</br>" +
+  function(){}.constructor + "</br>" +
+  NaN.constructor; */
+
+  /*   var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  document.getElementById("dataType").innerHTML = isArray(fruits);
+  function isArray(myArray){
+    return myArray.constructor === Array;
+  } */
+
+  var myDate = new Date();
+  document.getElementById("dataType").innerHTML = isDate(myDate);
+  function isDate(myDate) {
+    return myDate.constructor === Date;
+  }
+
+  // var x = 123;
+  document.getElementById("dataType").innerHTML =
+    // String(x) + "<br>" +
+    String(123) +
+    "</br>" +
+    String(100 + 23) +
+    "</br>" +
+    // x.toString() + "<br>" +
+    (123).toString() +
+    "</br>" +
+    (100 + 23).toString() +
+    "</br>" +
+    String(false) +
+    "</br>" +
+    String(true) +
+    "</br>" +
+    String(Date()) +
+    "</br>" +
+    Date().toString() +
+    "</br>" +
+    Number("3.14") +
+    "</br>" +
+    Number(" ") +
+    "</br>" +
+    Number("") +
+    "</br>" +
+    Number("66 22") +
+    "</br>" +
+    Number(false) +
+    "</br>" +
+    Number(true) +
+    "</br>" +
+    Number(new Date()) +
+    "</br>" +
+    new Date().getTime() +
+    "</br>" +
+    (5 + null) +
+    "</br>" +
+    ("5" + null) +
+    "</br>" +
+    ("5" + 2) +
+    "</br>" +
+    ("5" - 2) +
+    "</br>" +
+    ("5" * "2") +
+    "</br>" +
+    ("5" / "2");
+
+/*   var y = "Kagheni";
+  var x = +y;
+  document.getElementById("dataType").innerHTML = typeof y + "<br>" + typeof x; */
 }
