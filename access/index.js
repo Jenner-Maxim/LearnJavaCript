@@ -403,7 +403,7 @@ function forFunction() {
 function whileFunction() {
   var i = 0;
   var text = "";
-/*   while (i < 10) {
+  /*   while (i < 10) {
     text += "<br>The number is " + i;
     i++;
   } */
@@ -413,4 +413,24 @@ function whileFunction() {
     i++;
   } while (i < 10);
   document.getElementById("whileloop").innerHTML = text;
+}
+
+function breakFunction() {
+  var text = "";
+/*   for (var i = 0; i < 10; i++) {
+    if (i === 4) {
+      continue;
+    }
+    text += "The number is " + i + "<br>";
+  } */
+
+  var cars = ["BMW", "Volvo", "Saab", "Ford"];
+  list: {
+    text += cars[0] + "<br>";
+    text += cars[1] + "<br>";
+    break list;
+    text += cars[2] + "<br>";
+    text += cars[3] + "<br>";
+  }
+  document.getElementById("break").innerHTML = text;
 }
