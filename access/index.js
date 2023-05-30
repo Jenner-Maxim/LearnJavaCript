@@ -514,11 +514,23 @@ function dataTypeFunction() {
     "</br>" +
     ("5" - 2) +
     "</br>" +
-    ("5" * "2") +
+    "5" * "2" +
     "</br>" +
-    ("5" / "2");
+    "5" / "2";
 
-/*   var y = "Kagheni";
+  /*   var y = "Kagheni";
   var x = +y;
   document.getElementById("dataType").innerHTML = typeof y + "<br>" + typeof x; */
+}
+
+function bitwiseFunction() {
+  document.getElementById("bitwise").innerHTML = bin2dec(111);
+  
+  function dec2bin(dec) {
+    return (dec >>> 0).toString(2);
+  }
+
+  function bin2dec(bin){
+    return parseInt(bin, 2).toString(10);
+  }
 }
