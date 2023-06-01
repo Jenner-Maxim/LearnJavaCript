@@ -525,12 +525,30 @@ function dataTypeFunction() {
 
 function bitwiseFunction() {
   document.getElementById("bitwise").innerHTML = bin2dec(111);
-  
+
   function dec2bin(dec) {
     return (dec >>> 0).toString(2);
   }
 
-  function bin2dec(bin){
+  function bin2dec(bin) {
     return parseInt(bin, 2).toString(10);
   }
+}
+
+function RegExpFunction() {
+  // var search = document.getElementById("search").value;
+  // var body = document.getElementById("hey");
+  var str = "Visit W3Schools! to learn more about W3Schools";
+  // var n = str.search(/w3schools/i);
+  // var res = str.replace(/w3Schools/i, "Microsoft")
+  var the = document.getElementById("the");
+  var patt1 = /e/;
+  var result = patt1.exec("The best things in life are free!");
+  document.getElementById("regular").innerHTML =
+    "Found " +
+    result[0] +
+    " in position " +
+    result.index +
+    " in the text: " +
+    result.input;
 }
