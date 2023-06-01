@@ -27,5 +27,17 @@
       </button>
       <p id="time"></p>
     </div>
+
+    <p id="type_of_error"></p>
+
+    <script>
+      var x;
+      try{
+        x = y + 1;
+      } catch(err){
+        document.getElementById("type_of_error").innerHTML = err.name;
+      }
+    </script>
+
   </body>
 </html>

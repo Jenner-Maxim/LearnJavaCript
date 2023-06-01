@@ -552,3 +552,37 @@ function RegExpFunction() {
     " in the text: " +
     result.input;
 }
+
+function errorFunction() {
+  /*   try {
+    addlert("Welcome guest!");
+  } catch (err) {
+    document.getElementById("error").innerHTML = err.name + ": " + err.message;
+  } */
+
+  var message, x;
+  message = document.getElementById("error");
+  message.innerHTML = "";
+  x = document.getElementById("errorInput").value;
+
+  try {
+    if (x == "") throw "empty";
+    if (isNaN(x)) throw "not a number";
+    x = Number(x);
+    if (x < 5) throw "too low";
+    if (x > 10) throw "too high";
+  } catch (err) {
+    message.innerHTML = "Input is " + err;
+  } finally {
+    document.getElementById("errorInput").value = "";
+  }
+
+  // var num = 1
+  try {
+    // eval("alert('Hello)");
+    // num.toUpperCase();
+    decodeURI("%%%");
+  } catch (err) {
+    document.getElementById("type_of_error").innerHTML = err.name;
+  }
+}
