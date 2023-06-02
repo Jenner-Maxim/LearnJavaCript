@@ -553,12 +553,12 @@ function RegExpFunction() {
     result.input;
 }
 
-function errorFunction() {
+/* function errorFunction() {
   /*   try {
     addlert("Welcome guest!");
   } catch (err) {
     document.getElementById("error").innerHTML = err.name + ": " + err.message;
-  } */
+  } 
 
   var message, x;
   message = document.getElementById("error");
@@ -585,4 +585,13 @@ function errorFunction() {
   } catch (err) {
     document.getElementById("type_of_error").innerHTML = err.name;
   }
+} */
+
+/* scopeFunction();
+document.getElementById("scope").innerHTML = "I can display: " + carNameScope;
+function scopeFunction() {
+  carNameScope = "Volvo";
 }
+ */
+
+document.getElementById("scope").innerHTML = "I can display: ";
