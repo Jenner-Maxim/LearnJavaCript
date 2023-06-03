@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 // tom = 12;
 scopeFunction();
 // document.getElementById("scope").innerHTML = "Hi " + carName;
@@ -81,3 +81,32 @@ function constFunction() {
   carArray.push("Audi");
   document.getElementById("const").innerHTML = carArray;
 }
+
+const arrowFunction = () => {
+  var hello;
+  hello = function () {
+    return "Hello Word!";
+  };
+
+  hello = (val) => "Hello Word! from " + val;
+  document.getElementById("arrow").innerHTML = hello("Arrow Function!");
+};
+
+var hello;
+hello = function () {
+  document.getElementById("regular").innerHTML += this;
+};
+// hello();
+
+window.addEventListener("load", hello);
+
+// document.getElementById("regularFunction").addEventListener("click", hello);
+document
+  .getElementById("regularFunction")
+  .addEventListener("click", arrowFunction);
+
+hello = () => {
+  document.getElementById("regular").innerHTML += this;
+}
+window.addEventListener("load", hello);
+document.getElementById("regularFunction").addEventListener("click", hello);

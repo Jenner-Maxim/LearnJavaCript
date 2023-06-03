@@ -153,12 +153,23 @@
     <button onclick="constFunction()">Const</button>
     <p id="const"></p>
 
+    <button onclick="arrowFunction()">Arrow Function</button>
+    <p id="arrow"></p>
+
+    <button id="regularFunction">Regular Function</button>
+    <p id="regular"></p>
+
     <script>
       /*       var scope1 = "Maxim";
       document.getElementById("scope").innerHTML = window.scope1; */
 
       /* let carName = "Maxim";
       document.getElementById("let").innerHTML = window.carName; */
+
+      var hello;
+      hello = function () {
+        document.getElementById("regular").innerHTML += this;
+      };
     </script>
     <script src="index1.js"></script>
   </body>
