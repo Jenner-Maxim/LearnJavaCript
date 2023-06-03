@@ -58,3 +58,11 @@ function thisFunction() {
   var x = person1.fullname.call(person2);
   document.getElementById("this").innerHTML = x;
 }
+
+function letFunction() {
+  let i = 5;
+  for (let i = 0; i < 10; i++) {}
+
+  let carName = "Maxim";
+  document.getElementById("let").innerHTML = window.carName;
+}
