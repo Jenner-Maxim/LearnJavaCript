@@ -66,3 +66,18 @@ function letFunction() {
   let carName = "Maxim";
   document.getElementById("let").innerHTML = window.carName;
 }
+
+function constFunction() {
+  const car = {
+    type: "Ferrari",
+    model: "500",
+    color: "Black",
+  };
+  car.color = "Red";
+  car.ower = "Kagheni";
+
+  const carArray = ["Ferrari", "Kagheni", "Maxim"];
+  carArray[1] = "Bugatti";
+  carArray.push("Audi");
+  document.getElementById("const").innerHTML = carArray;
+}
