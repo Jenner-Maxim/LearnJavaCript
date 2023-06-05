@@ -147,3 +147,9 @@ function classFunction() {
 mycar = new Car("Ford");
 document.getElementById("class").innerHTML = mycar.carname;
  */
+
+let debuggerFunction = () => {
+  var x = 15 * 5;
+  debugger;
+  document.getElementById("debugger").innerHTML = x;
+}
