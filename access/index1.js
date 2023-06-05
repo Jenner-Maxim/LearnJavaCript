@@ -92,7 +92,7 @@ const arrowFunction = () => {
   document.getElementById("arrow").innerHTML = hello("Arrow Function!");
 };
 
-var hello;
+var helloworld;
 hello = function () {
   document.getElementById("regular").innerHTML += this;
 };
@@ -100,7 +100,9 @@ hello = function () {
 
 window.addEventListener("load", hello);
 
-// document.getElementById("regularFunction").addEventListener("click", hello);
+document
+  .getElementById("regularFunction")
+  .addEventListener("click", helloworld);
 document
   .getElementById("regularFunction")
   .addEventListener("click", arrowFunction);
@@ -152,4 +154,14 @@ let debuggerFunction = () => {
   var x = 15 * 5;
   debugger;
   document.getElementById("debugger").innerHTML = x;
-}
+};
+
+let bestPractices = () => {
+  let bestPractices = (x, y) => {
+    if (y === undefined) {
+      y = 0;
+    }
+    return x * y;
+  };
+  document.getElementById("best").innerHTML = bestPractices(4);
+};
