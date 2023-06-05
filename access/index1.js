@@ -107,6 +107,43 @@ document
 
 hello = () => {
   document.getElementById("regular").innerHTML += this;
-}
+};
 window.addEventListener("load", hello);
 document.getElementById("regularFunction").addEventListener("click", hello);
+
+function classFunction() {
+  class Car {
+    constructor(brand) {
+      this._carname = brand;
+    }
+    /*     present() {
+      return "I have a  " + this.carname;
+    } */
+    set carname(x) {
+      this._carname = x;
+    }
+    get carname() {
+      return this._carname;
+    }
+  }
+  /*   class Model extends Car{
+    constructor(brand, mod){
+      super(brand);
+      this.model = mod;
+    }
+    show(){
+      return this.present() + ", it is a " + this.model;
+    }
+  } */
+  var mycar = new Car("Ford");
+  mycar.carname = "Volvo";
+  document.getElementById("class").innerHTML = mycar.carname;
+}
+/* class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+}
+mycar = new Car("Ford");
+document.getElementById("class").innerHTML = mycar.carname;
+ */
