@@ -370,3 +370,12 @@ const numbFunction = () => {
   }
   document.getElementById("message").innerHTML = txt;
 };
+
+let checkFunction = () => {
+  let checkbox = document.getElementById("checkbox");
+  if (checkbox.checked) {
+    console.log("Checkbox is checked");
+  } else{
+    console.log("Checkbox is not checked");
+  }
+};
