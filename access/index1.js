@@ -344,7 +344,7 @@ const validateForm = () => {
   if (Number(x) || x === "") {
     alert("Please enter a valid Name");
     return false;
-  } 
+  }
   // if (isNaN(x) || x < 1 || x > 10) {
   //   alert("Input not valid");
   //   return false;
@@ -352,4 +352,21 @@ const validateForm = () => {
   //   alert("Input ok");
   //   return false;
   // }
+};
+
+const numbFunction = () => {
+  // let inpObj = document.getElementById("input");
+  // if (!inpObj.checkValidity()) {
+  //   document.getElementById("message").innerHTML = inpObj.validationMessage;
+  // } else {
+  //   document.getElementById("message").innerHTML = "Input OK";
+  // }
+
+  let txt = "";
+  if (document.getElementById("input").validity.rangeUnderflow) {
+    txt = "Value too small";
+  } else {
+    txt = "Input OK";
+  }
+  document.getElementById("message").innerHTML = txt;
 };

@@ -240,15 +240,21 @@
     <button onclick="jsonFunction()">JSON</button>
     <p id="jsonstr"></p>
 
-    <form
+    <!--     <form
       name="myForm"
       action="app.html"
       onsubmit="return validateForm()"
       method="post"
-    >
-      Name: <input type="text" name="fname" required pattern="sdsd"/>
-      <input type="submit" value="Submit" />
-    </form>
+    > -->
+
+    Number: <input id="input" type="number" min="100" />
+
+    <!-- <input type="submit" value="Submit" /> -->
+
+    <button onclick="numbFunction()">OK</button>
+    <p id="message"></p>
+
+    <!-- </form> -->
 
     <script>
       /*       var scope1 = "Maxim";
@@ -263,6 +269,7 @@
       }; */
       // console.log("hello, world")
     </script>
+
     <script src="index1.js"></script>
   </body>
 </html>
