@@ -140,7 +140,7 @@
 
     <!-- <script src="index.js"></script> -->
 
-    <p id="scope"></p>
+    <!-- <p id="scope"></p>
 
     <button onclick="this.style.display='none'">This</button>
 
@@ -169,8 +169,66 @@
     <p id="best"></p>
 
     <button onclick="commonMistakes()">Common Mistakes</button>
-    <p id="mistake"></p>
+    <p id="mistake"></p> -->
 
+    <input id="input" type="text" />
+    <button onclick="getFunction()">Add</button>
+    <p id="setdata"></p>
+
+    <input id="input2" type="text" />
+    <button id="btn2">Add 2</button>
+    <p id="setdata2"></p>
+
+    <!-- ECMAScript 5 - JavaScript 5 -->
+    <button onclick="checkArray()">Array</button>
+    <p id="array"></p>
+
+    <button onclick="forEachArry()">For Array</button>
+    <p id="foreach"></p>
+
+    <button onclick="mapArray()">Map Array</button>
+    <p id="map"></p>
+
+    <button onclick="arrayFilter()">Array Filter</button>
+    <p id="filter"></p>
+
+    <button onclick="reduceArray()">Array Reduce</button>
+    <p id="reduce"></p>
+
+    <button onclick="indexOfArray()">IndexOf</button>
+    <p id="indexof"></p>
+
+    <button onclick="jsonParse()">JSON parse</button>
+    <p id="json"></p>
+
+    <input type="text" id="fname" />
+    <input type="text" name="" id="lname" />
+    <button onclick="getterSetter()">Getter, Setter</button>
+    <p id="getset"></p>
+    <div
+      style="
+        color: #fff;
+        background-color: #272b35;
+        width: fit-content;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 20px;
+      "
+    >
+      <code>
+        <span style="color: rgb(136, 154, 236)">let</span> fname =
+        <span style="color: rgb(226, 152, 83)">"Maxim"</span>;
+        <br />
+        <span style="color: rgb(136, 154, 236)">for</span>(i
+        <span style="color: rgb(136, 154, 236)">in</span> fname){
+        <br />
+        &nbsp; console.<span style="color: rgb(248, 232, 158);">log</span>(fname[i]);
+        <br />
+        }
+      </code>
+    </div>
+<button onclick="charat()">CharAt</button>
+    <p id="charat"></p>
     <script>
       /*       var scope1 = "Maxim";
       document.getElementById("scope").innerHTML = window.scope1; */
@@ -183,7 +241,6 @@
         document.getElementById("regular").innerHTML += this;
       }; */
       // console.log("hello, world")
-
     </script>
     <script src="index1.js"></script>
   </body>
