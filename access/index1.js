@@ -185,14 +185,14 @@ const getFunction = () => {
 let btn2 = document.getElementById("btn2");
 let setdata2 = document.getElementById("setdata2");
 
-btn2.addEventListener(
-  "click",
-  (getFunction2 = () => {
-    let input2 = document.getElementById("input2").value;
-    setdata2.innerHTML += input2;
-    // console.log(input2);
-  })
-);
+// btn2.addEventListener(
+//   "click",
+//   (getFunction2 = () => {
+//     let input2 = document.getElementById("input2").value;
+//     setdata2.innerHTML += input2;
+//     // console.log(input2);
+//   })
+// );
 
 // let get2 = () => {
 //   console.log(input2);
@@ -329,4 +329,27 @@ const arrayFind = () => {
   let x = 5 ** 2;
   // let z = Math.pow(x, 2);
   document.getElementById("find").innerHTML = x;
+};
+
+let jsonFunction = () => {
+  let text =
+    '{"employees":[{"firstName":"Kagheni","lastName":"Maxim"}, {"firstName":"Ariane","lastName":"Mwasimuke"}, {"firstName":"Winner", "lastName":"Kagheni"}]}';
+  obj = JSON.parse(text);
+  document.getElementById("jsonstr").innerHTML =
+    obj.employees[1].firstName + " " + obj.employees[1].lastName;
+};
+
+const validateForm = () => {
+  let x = document.forms["myForm"]["fname"].value;
+  if (Number(x) || x === "") {
+    alert("Please enter a valid Name");
+    return false;
+  } 
+  // if (isNaN(x) || x < 1 || x > 10) {
+  //   alert("Input not valid");
+  //   return false;
+  // } else {
+  //   alert("Input ok");
+  //   return false;
+  // }
 };
