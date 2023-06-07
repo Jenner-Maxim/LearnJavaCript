@@ -190,14 +190,14 @@ btn2.addEventListener(
   (getFunction2 = () => {
     let input2 = document.getElementById("input2").value;
     setdata2.innerHTML += input2;
-    console.log(input2);
+    // console.log(input2);
   })
 );
 
-let get2 = () => {
-  console.log(input2);
-};
-get2();
+// let get2 = () => {
+//   console.log(input2);
+// };
+// get2();
 
 // ECMAScript  5 - JavaScript 5
 
@@ -297,12 +297,36 @@ let getterSetter = () => {
   document.getElementById("getset").innerHTML = person.language;
 };
 
-let fname = "Maxim";
-for (i in fname) {
-  console.log(fname[i]);
-}
+// let fname = "Maxim";
+// for (i in fname) {
+//   console.log(fname[i]);
+// }
 
 let charat = () => {
   let str = "Hello, Maxim";
   document.getElementById("charat").innerHTML = str.charAt(4);
-}
+};
+
+const classFunc = () => {
+  class Car {
+    constructor(brand) {
+      this.carname = brand;
+    }
+  }
+  mycar = new Car("Ford");
+  document.getElementById("class").innerHTML = mycar.carname;
+};
+
+const arrayFind = () => {
+  let numbers = [23, 4, 5, 3, 24, 53];
+  let first = numbers.find(findFunction);
+
+  function findFunction(value) {
+    return value > 18;
+  }
+  // document.getElementById("find").innerHTML = first;
+
+  let x = 5 ** 2;
+  // let z = Math.pow(x, 2);
+  document.getElementById("find").innerHTML = x;
+};
