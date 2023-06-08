@@ -379,3 +379,15 @@ let checkFunction = () => {
     console.log("Checkbox is not checked");
   }
 };
+
+const objectFunction = () => {
+  let person = {
+    firstName: "Kagheni",
+    lastName: "Maxim",
+    age: 36,
+    eyecolor: "white"
+  }
+  let x = person;
+  x.age = 56;
+  document.getElementById("object").innerHTML = x.age;
+}
