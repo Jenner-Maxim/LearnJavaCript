@@ -375,19 +375,78 @@ let checkFunction = () => {
   let checkbox = document.getElementById("checkbox");
   if (checkbox.checked) {
     console.log("Checkbox is checked");
-  } else{
+  } else {
     console.log("Checkbox is not checked");
   }
 };
 
 const objectFunction = () => {
+  let txt = "";
   let person = {
-    firstName: "Kagheni",
-    lastName: "Maxim",
+    firstName: "",
+    lastName: "",
     age: 36,
-    eyecolor: "white"
-  }
-  let x = person;
-  x.age = 56;
-  document.getElementById("object").innerHTML = x.age;
-}
+    eyecolor: "",
+    // get eye() {
+    //   return this.eyecolor;
+    // },
+    // set eyes(eye) {
+    //   this.eyecolor = eye;
+    // },
+
+    get fullname() {
+      return (this.firstName + " " + this.lastName).toUpperCase();
+    },
+  };
+  person.firstName = "Kagheni";
+  person.lastName = "Maxim";
+  // person.eyes = "Blue";
+  // person.fullname = function () {
+  //   return this.firstName + " " + this.lastName;
+  // };
+  // let name = person.fullname();
+  // person.nationality = "Congolese";
+  // delete person.age;
+  // let x;
+  // for (x in person) {
+  //   txt += person[x] + " ";
+  // }
+  document.getElementById("object").innerHTML = person.fullname;
+};
+
+const counterFunction = () => {
+  let obj = { counter: 0 };
+  Object.defineProperty(obj, "reset", {
+    get: function () {
+      this.counter = 5;
+    },
+  });
+  Object.defineProperty(obj, "increment", {
+    get: function () {
+      this.counter++;
+    },
+  });
+  Object.defineProperty(obj, "decrement", {
+    get: function () {
+      this.counter--;
+    },
+  });
+  Object.defineProperty(obj, "add", {
+    set: function (value) {
+      this.counter += value;
+    },
+  });
+  Object.defineProperty(obj, "sub", {
+    set: function (value) {
+      this.counter -= value;
+    },
+  });
+
+  obj.reset;
+  // obj.add = 5;
+  // obj.sub = 3;
+  // obj.increment;
+  // obj.decrement;
+
+  document.getElementById("counter").innerHTML = obj.counter;
+};
