@@ -450,3 +450,35 @@ const counterFunction = () => {
 
   document.getElementById("counter").innerHTML = obj.counter;
 };
+
+let objectContructor = () => {
+  function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.ages = age;
+    this.eyeColor = eye;
+
+    // this.name = function () {
+    //   return this.firstName + " " + this.lastName;
+    // };
+
+    this.changeName = function (name) {
+      this.lastName = name;
+    };
+  }
+  let person1 = new Person("Kagheni", "Maxim", 53, "Blue");
+  let person2 = new Person("Ariane", "Mwasimuke", 23, "Green");
+  person1.nationality = "Congolese";
+
+  person2.changeName("Kagheni");
+
+  document.getElementById("object-constructor").innerHTML =
+    "I'm  " +
+    person1.ages +
+    " and My sister is " +
+    person2.ages +
+    " and I'm " +
+    person1.nationality +
+    " and my siter's last name is " +
+    person2.lastName;
+};
