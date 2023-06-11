@@ -462,15 +462,21 @@ let objectContructor = () => {
     //   return this.firstName + " " + this.lastName;
     // };
 
-    this.changeName = function (name) {
-      this.lastName = name;
-    };
+    // this.changeName = function (name) {
+    //   this.lastName = name;
+    // };
   }
+  Person.prototype.nationality = "Congolese";
+
+  Person.prototype.name = function () {
+    return this.firstName + " " + this.lastName;
+  };
+
   let person1 = new Person("Kagheni", "Maxim", 53, "Blue");
   let person2 = new Person("Ariane", "Mwasimuke", 23, "Green");
-  person1.nationality = "Congolese";
+  // person1.nationality = "Congolese";
 
-  person2.changeName("Kagheni");
+  // person2.changeName("Kagheni");
 
   document.getElementById("object-constructor").innerHTML =
     "I'm  " +
@@ -480,5 +486,25 @@ let objectContructor = () => {
     " and I'm " +
     person1.nationality +
     " and my siter's last name is " +
-    person2.lastName;
+    person2.lastName +
+    " and my full name is " +
+    person1.name();
+};
+
+let property = () => {
+  let person = {
+    fname: "Kagheni",
+    lname: "Maxim",
+    language: "English",
+  };
+  Object.defineProperty(person, "language", { enumerable: false });
+  Object.defineProperty(person, "year", { value: "2023" });
+
+  Object.defineProperty(person, "fullName", {
+    get: function () {
+      return this.fname + " " + this.lname;
+    },
+  });
+
+  document.getElementById("property").innerHTML = person.fullName;
 };
