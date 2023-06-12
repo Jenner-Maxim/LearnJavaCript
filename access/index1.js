@@ -508,3 +508,46 @@ let property = () => {
 
   document.getElementById("property").innerHTML = person.fullName;
 };
+
+let add = (function () {
+  let counter = 0;
+  return function () {
+    counter += 1;
+    return counter;
+  };
+})();
+
+let functionDef = () => {
+  // function func(x, y) {
+  //   return x * y;
+  // }
+  // let z = func(5, 6) + 3;
+
+  let person = {
+    fullName: function (city, country) {
+      return this.fname + " " + this.lname + ", " + city + ", " + country;
+    },
+  };
+  let person1 = {
+    fname: "Kagheni",
+    lname: "Maxim",
+  };
+  let person2 = {
+    fname: "Ariane",
+    lname: "Mwasimuke",
+  };
+  // let counter = 0;
+
+  document.getElementById("function").innerHTML = add();
+};
+// document.getElementById("function").innerHTML = x;
+
+// (function () {
+//   document.getElementById("function").innerHTML = "function";
+// })();
+
+// function sumAll(a, b) {
+//   return a * b;
+// }
+// // let z = location.hash;
+// document.getElementById("function").innerHTML = window.sumAll(5, 5);
