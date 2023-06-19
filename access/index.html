@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript</title>
   </head>
-  <body id="darck">
+  <body id="darck" onload="checkCookies()">
     <!-- <button type="button" onclick="time()">Click me to Display Time and Date</button>
     <p id="time"></p>
     
@@ -201,10 +201,10 @@
     <button onclick="jsonParse()">JSON parse</button>
     <p id="json"></p> -->
 
-    <input type="text" id="fname" />
+    <!-- <input type="text" id="fname" />
     <input type="text" name="" id="lname" />
     <button onclick="getterSetter()">Getter, Setter</button>
-    <p id="getset"></p>
+    <p id="getset"></p> -->
     <div
       style="
         color: #fff;
@@ -228,7 +228,7 @@
         }
       </code>
     </div>
-    <button onclick="charat()">CharAt</button>
+    <!-- <button onclick="charat()">CharAt</button>
     <p id="charat"></p>
 
     <button onclick="classFunc()">Class</button>
@@ -238,7 +238,7 @@
     <p id="find"></p>
 
     <button onclick="jsonFunction()">JSON</button>
-    <p id="jsonstr"></p>
+    <p id="jsonstr"></p> -->
 
     <!--     <form
       name="myForm"
@@ -247,31 +247,89 @@
       method="post"
     > -->
 
-    Number: <input id="input" type="number" min="100" />
+    <!-- Number: <input id="input" type="number" min="100" /> -->
 
     <!-- <input type="submit" value="Submit" /> -->
 
-    <button onclick="numbFunction()">OK</button>
-    <p id="message"></p>
+    <!-- <button onclick="numbFunction()">OK</button>
+    <p id="message"></p> -->
 
     <!-- </form> -->
 
-    <input type="checkbox" id="checkbox" onclick="checkFunction()" />
+    <!-- <input type="checkbox" id="checkbox" onclick="checkFunction()" />
 
     <button onclick="objectFunction()">Object</button>
-    <p id="object"></p>
+    <p id="object"></p> -->
 
-    <button onclick="counterFunction()">Counter</button>
-    <p id="counter"></p>
+    <!-- <button onclick="counterFunction()">Counter</button>
+    <p id="counter"></p> -->
 
-    <button onclick="objectContructor()">Object Constructor</button>
-    <p id="object-constructor"></p>
+    <!-- <button onclick="objectContructor()">Object Constructor</button>
+    <p id="object-constructor"></p> -->
 
-    <button onclick="property()">Properties</button>
-    <p id="property"></p>
-
+    <!-- <button onclick="property()">Properties</button>
+    <p id="property"></p> -->
+    <!-- 
     <button onclick="functionDef()">Function</button>
-    <p id="function"></p>
+    <p id="function"></p> -->
+
+    <!-- <button onclick="htmldom()">DOM</button>
+    <p class="name">Maxim</p>
+    <p class="name">Jenner</p>
+    <p id="set"></p>
+    <input type="text" id="input" /> -->
+
+    <!-- <form id="form1" action="">
+      <input type="text" />
+      <input type="text" />
+      <button onclick="formdom">Submit</button>
+    </form>
+    <p id="set-form"></p> -->
+
+    <!-- <p class="toset">Maxim</p>
+    <button onclick="setInput()" class="btn">Maxim</button>
+    <input type="text" name="" id="inp" />
+    <br /> -->
+
+    <!-- <button onclick="changeAttrib()">Change Attribute</button>
+    <img id="img" src="img/blue.jpg" alt="" width="200" /> -->
+
+    <button onclick="changeStyle()">Change Style</button>
+    <p id="style">Hi Maxim, are you fine?</p>
+    <p onclick="changing(this)" id="disappear">Disappear</p>
+
+    <!-- <style>
+      #container {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        background-color: yellow;
+      }
+
+      #animate {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-color: red;
+      }
+    </style>
+    <button onclick="animation()">Animation</button>
+    <div id="container">
+      <div id="animate"></div>
+    </div> -->
+
+    <button>Events</button>
+    <p id="disdate"></p>
+
+    <input type="text" id="fname" onchange="changeFunction()" />
+
+    <div
+      onmousedown="mouseDown(this)"
+      onmouseup="mouseUp(this)"
+      style="background-color: red; width: 250px; padding: 20px; color: #fff;"
+    >
+      Click the div then Release the div
+    </div>
 
     <script>
       /*       var scope1 = "Maxim";

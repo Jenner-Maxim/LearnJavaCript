@@ -551,3 +551,96 @@ let functionDef = () => {
 // }
 // // let z = location.hash;
 // document.getElementById("function").innerHTML = window.sumAll(5, 5);
+
+let htmldom = () => {
+  let myName = document.querySelectorAll("p.name");
+  // let x = myName.getElementsByTagName("p");
+  let setElement = document.getElementById("set");
+  let input = document.getElementById("input");
+
+  setElement.innerHTML = myName[1].innerHTML;
+  // console.log(x);
+};
+
+let formdom = () => {
+  let form1 = document.getElementById("form1");
+  let setForm = document.getElementById("set-form");
+  let text = "";
+  let i;
+
+  for (i = 0; i < form1.length; i++) {
+    text += form1[i].value + "<br>";
+  }
+  setForm.innerHTML = text;
+};
+
+setInput = () => {
+  let toset = document.querySelectorAll(".toset");
+  let btn = document.querySelectorAll(".btn");
+  let inp = document.getElementById("inp");
+  inp.value = btn[0].innerHTML;
+};
+
+// document.write(Date())
+
+let changeAttrib = () => {
+  let img = document.getElementById("img");
+  img.src = "img/yellow.jpg";
+};
+
+let changeStyle = () => {
+  let changeStyle = document.getElementById("style");
+  let disappear = document.getElementById("disappear");
+  changeStyle.style.color = "blue";
+  changeStyle.style.fontFamily = "Arial";
+  changeStyle.style.fontSize = "larger";
+  disappear.style.visibility = "hidden";
+};
+
+let animation = () => {
+  let elem = document.getElementById("animate");
+  let pos = 0;
+  let id = setInterval(frame, 5);
+
+  function frame() {
+    if (pos === 350) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + "px";
+      elem.style.left = pos + "px";
+    }
+  }
+};
+
+let changing = (chane) => {
+  chane.innerHTML = "Hey";
+};
+
+let displayDate = () => {
+  document.getElementById("disdate").innerHTML = Date();
+};
+// document.getElementById("event").onclick = displayDate;
+
+let checkCookies = () => {
+  let text = "";
+  if (navigator.cookieEnabled === true) {
+    text = "cookies are enabled";
+  } else {
+    text = "cookies are disabled";
+  }
+  document.getElementById("disdate").innerHTML = text;
+};
+
+let changeFunction = () => {
+  let x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+};
+
+let mouseDown = (par) => {
+  par.innerHTML = "You're clicking on the div"
+};
+
+let mouseUp = (par) => {
+  par.innerHTML = "You're releasing the div"
+}
