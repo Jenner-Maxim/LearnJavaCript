@@ -638,9 +638,95 @@ let changeFunction = () => {
 };
 
 let mouseDown = (par) => {
-  par.innerHTML = "You're clicking on the div"
+  par.innerHTML = "You're clicking on the div";
 };
 
 let mouseUp = (par) => {
-  par.innerHTML = "You're releasing the div"
+  par.innerHTML = "You're releasing the div";
+};
+
+let btn = document.getElementById("btn");
+// btn.addEventListener("mouseover", eventListener);
+// btn.addEventListener("mouseout", eventListener2);
+
+function eventListener() {
+  document.getElementById("eventListener").innerHTML = Date();
 }
+
+function eventListener1() {
+  alert("Hey Maxim 1");
+}
+
+let p1 = 3;
+let p2 = 2;
+// btn.addEventListener("click", function () {
+//   eventListener2(p1, p2);
+// });
+function eventListener2(a, b) {
+  let result = a * b;
+  document.getElementById("eventListener").innerHTML = result;
+}
+
+window.addEventListener("resize", function () {
+  document.getElementById("eventListener").innerHTML = Math.random();
+});
+
+// document.getElementById("div1").addEventListener("mousemove", eventFunc);
+function eventFunc() {
+  document.getElementById("eventListener").innerHTML = Math.random();
+}
+
+// document.getElementById("p1").addEventListener("click", function () {
+//   document.getElementById("div1").removeEventListener("mousemove", eventFunc);
+// });
+
+// document.getElementById("div2").addEventListener(
+//   "click",
+//   function () {
+//     alert("You clicked on the Orange box");
+//   },
+//   true
+// );
+
+// document.getElementById("p2").addEventListener(
+//   "click",
+//   function () {
+//     alert("You clicked on the white box");
+//   },
+//   true
+// );
+
+// let x = document.getElementById("p2");
+// if (x.addEventListener) {
+//   x.addEventListener("click", browserfunc);
+// } else if (x.attachEvent) {
+//   x.attachEvent("onclick", browserfunc);
+// }
+
+function browserfunc() {
+  alert("Hey Maxim");
+}
+
+let node = () => {
+  let node = document.getElementById("node1").nodeType;
+  // document.getElementById("node2").innerHTML = node;
+  // alert(document.documentElement.innerHTML);
+  // console.log(node);
+
+  let para = document.createElement("p");
+  let text = document.createTextNode("Hey Kagheni");
+  para.appendChild(text);
+  let element = document.getElementById("div1");
+  let child = document.getElementById("p2");
+  element.insertBefore(para, child);
+  // child.remove();
+  // element.removeChild(child);
+  // child.parentNode.removeChild(child);
+  // element.replaceChild(para, child);
+  let collection = document.getElementsByTagName("p");
+  // console.log(collection.length);
+  let i;
+  for (i = 0; i < collection.length; i++) {
+    collection[i].style.backgroundColor = "red";
+  }
+};
