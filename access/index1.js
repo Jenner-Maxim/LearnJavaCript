@@ -730,3 +730,79 @@ let node = () => {
     collection[i].style.backgroundColor = "red";
   }
 };
+
+// let timer = setTimeout(browserFunc, 3000);
+let browserFunc = () => {
+  // let w =
+  //   window.innerWidth ||
+  //   document.documentElement.clientWidth ||
+  //   document.body.clientWidth;
+  // let h =
+  //   window.innerHeight ||
+  //   document.documentElement.clientHeight ||
+  //   document.body.clientHeight;
+
+  // let x = document.getElementById("browser");
+  // if (w <= 400) {
+  //   alert("Less than 500");
+  // }
+  // window.open("app.html")
+  // window.location.assign("app.html");
+  // window.history.forward();
+  // let txt;
+  // let person = prompt("Please enter\nyour name", "Kagheni Jenner");
+  // if (person === null || person === "") {
+  //   txt = "User cancelled the prompt.";
+  // } else {
+  //   txt = "Hello " + person + "! How are you today?";
+  // }
+
+  // x.innerHTML = txt;
+  // document.getElementById("browser.innerHTML = txt;
+  let timers = setInterval(myTimer, 1000);
+  let d = 10;
+  function myTimer() {
+    let x = document.getElementById("browser");
+    x.innerHTML = document.cookie;
+    if (d === 0) {
+      clearInterval(timers);
+      alert("Timeout");
+    }
+  }
+  // alert("Hi");
+};
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+  var exdays = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + exdays + ";path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(";");
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) === " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) === 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  var user = getCookie("username");
+  if (user !== "") {
+    alert("Welocome again " + user);
+  } else {
+    user = prompt("Please enter your name:", "");
+    if (user !== "" && user !== null) {
+      setCookie("username", user), 30;
+    }
+  }
+}
