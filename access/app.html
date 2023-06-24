@@ -26,18 +26,17 @@
         Click me to Display Date and Time
       </button>
       <p id="time"></p>
+      <p id="type_of_error"></p>
     </div>
 
-    <p id="type_of_error"></p>
-
     <script>
+      document.getElementById("name").innerHTML = "fname";
       var x;
-      try{
+      try {
         x = y + 1;
-      } catch(err){
+      } catch (err) {
         document.getElementById("type_of_error").innerHTML = err.name;
       }
     </script>
-
   </body>
 </html>

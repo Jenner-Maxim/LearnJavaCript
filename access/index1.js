@@ -629,7 +629,7 @@ let checkCookies = () => {
   } else {
     text = "cookies are disabled";
   }
-  document.getElementById("disdate").innerHTML = text;
+  // document.getElementById("disdate").innerHTML = text;
 };
 
 let changeFunction = () => {
@@ -667,9 +667,9 @@ function eventListener2(a, b) {
   document.getElementById("eventListener").innerHTML = result;
 }
 
-window.addEventListener("resize", function () {
-  document.getElementById("eventListener").innerHTML = Math.random();
-});
+// window.addEventListener("resize", function () {
+//   document.getElementById("eventListener").innerHTML = Math.random();
+// });
 
 // document.getElementById("div1").addEventListener("mousemove", eventFunc);
 function eventFunc() {
@@ -806,3 +806,82 @@ function checkCookie() {
     }
   }
 }
+
+let loadDoc1 = () => {
+  let xhttp, xmlDoc, txt, x, i;
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      // callFunc(this);
+      xmlDoc = this.responseXML;
+      txt = "";
+      x = xmlDoc.getElementsByTagName("ARTIST");
+      for (i = 0; i < x.length; i++) {
+        txt = txt + x[i].childNodes[0].nodeValue + "<br>";
+      }
+      document.getElementById("demo").innerHTML = txt;
+    }
+  };
+  xhttp.open("GET", "cd_catalog.xml", true);
+  // xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhttp.send();
+};
+
+// function ajaxFunc(xhttp) {
+//   document.getElementById("demo").innerHTML = xhttp.responseText;
+// }
+
+let loadDoc2 = () => {
+  let xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      document.getElementById("demo").innerHTML =
+        this.getResponseHeader("Last-Modified");
+    }
+  };
+  xhttp.open("GET", "app.html", true);
+  xhttp.send();
+};
+
+let loadDoc3 = () => {
+  let xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      serverFunc(this);
+    }
+  };
+  xhttp.open("GET", "cd_catalog.xml", true);
+  xhttp.send();
+};
+
+function serverFunc(xml) {
+  let i;
+  let xmlDoc = xml.responseXML;
+  let table = "<tr><th>Artist</th><th>Title</th></tr>";
+  let x = xmlDoc.getElementsByTagName("CD");
+  for (i = 0; i < x.length; i++) {
+    table +=
+      "<tr><td>" +
+      x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+      "</td><td>" +
+      x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+      "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+
+let showHint = (str) => {
+  let xhttp;
+  if (str.length === 0) {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "gethint.php?q="+str, true);
+  xhttp.send();
+};
