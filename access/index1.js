@@ -882,6 +882,6 @@ let showHint = (str) => {
       document.getElementById("txtHint").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "gethint.php?q="+str, true);
+  xhttp.open("GET", "gethint.asp?q="+str, true);
   xhttp.send();
 };
