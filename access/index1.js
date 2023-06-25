@@ -882,6 +882,112 @@ let showHint = (str) => {
       document.getElementById("txtHint").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "gethint.asp?q="+str, true);
+  xhttp.open("GET", "gethint.php?q=" + str, true);
   xhttp.send();
 };
+
+let showCunstomer = (str) => {
+  let xhttp;
+  if (str === "") {
+    document.getElementById("txtCust").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      document.getElementById("txtCust").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "getcustomer.php?q=" + str, true);
+  xhttp.send();
+};
+
+let i = 0,
+  len;
+let displayCDs = (i) => {
+  let xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      cdFunc(this, i);
+    }
+  };
+  xmlhttp.open("GET", "cd_catalog.xml", true);
+  xmlhttp.send();
+};
+
+function cdFunc(xml, i) {
+  let xmlDoc = xml.responseXML;
+  let x = xmlDoc.getElementsByTagName("CD");
+  len = x.length;
+  document.getElementById("showCD").innerHTML =
+    "Artist: " +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+    "<br>Title: " +
+    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+    "<br>Year: " +
+    x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;
+}
+
+function next() {
+  if (i < len - 1) {
+    i++;
+    displayCDs(i);
+  }
+}
+
+function previous() {
+  if (i > 0) {
+    i--;
+    displayCDs(i);
+  }
+}
+
+// let x, xmlhttp, xmlDoc;
+// xmlhttp = new XMLHttpRequest();
+// xmlhttp.open("GET", "cd_catalog.xml", false);
+// xmlhttp.send();
+// xmlDoc = xmlhttp.responseXML;
+// x = xmlDoc.getElementsByName("CD");
+// table = "<tr><th>Aristist</th><th>Title</th></tr>";
+// for (i = 0; i < x.length; i++) {
+//   table += "<tr onclick='displayCD(" + i + ")'><td>";
+//   table += x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue;
+//   table += "</td><td>";
+//   table += x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
+//   table += "</td></tr>";
+// }
+// document.getElementById("demo").innerHTML = "<tr onclick='displayCD(" + i + ")'><td>";
+
+// function displayCD(i) {
+//   document.getElementById("showCD").innerHTML =
+//     "Artist: " +
+//     x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+//     "<br>Title: " +
+//     x[i].getElementsByName("TITLE")[0].childNodes[0].nodeValue +
+//     "<br>YEAR: " +
+//     x[i].getElementsByName("YEAR")[0].childNodes[0].nodeValue;
+// }
+
+let x, xmlhttp, xmlDoc;
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function () {
+  if (this.readyState === 4 && this.status === 200) {
+    xmlDoc = xmlhttp.responseXML;
+    x = xmlDoc.getElementsByTagName("CD");
+    table = "<tr><th>Artist</th><th>Title</th><tr>";
+    for (i = 0; i < x.length; i++) {
+      table += "<tr onclick='displayCD(" + i + ")'><td>";
+      table += x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue;
+      table += "</td><td>";
+      table += x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
+      table += "</td></tr>";
+    }
+    document.getElementById("demo").innerHTML = table;
+  }
+};
+xmlhttp.open("GET", "cd_catalog.xml", true);
+xmlhttp.send();
+
+function displayCD(i) {
+  document.getElementById("showCD").innerHTML = "Artist: " + x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue + "<br>Title: " + x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue + "<br>Year: " + x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;
+}

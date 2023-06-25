@@ -404,6 +404,23 @@
       First Name: <input type="text" id="txt1" onkeyup="showHint(this.value)" />
     </p>
     <br /><br />
+
+    <form action="#">
+      <select name="cutomers" onchange="showCunstomer(this.value)" id="">
+        <option value="">Select a Custormer:</option>
+        <option value="ALFI">Alfreds Futterkiste</option>
+        <option value="NORTS">North/South</option>
+        <option value="WOLZA">Wolski Zajazd</option>
+      </select>
+    </form>
+    <br />
+    <div id="txtCust">Custormer info will be listed here...</div>
+
+    <button onclick="displayCDs(i)">CD</button>
+    <button onclick="previous()"><<</button>
+    <button onclick="next()">>></button>
+
+    <p id="showCD"></p>
     <table id="demo"></table>
 
     <script>
