@@ -420,8 +420,15 @@
     <button onclick="previous()"><<</button>
     <button onclick="next()">>></button>
 
+    <br /><br />
+    <button onclick="xmlFunc()">XML</button>
     <p id="showCD"></p>
     <table id="demo"></table>
+
+    <button onclick="getXMLdata('note.xml')">Get XML data</button>
+    <p><b>Status:</b> <span id="A1"></span></p>
+    <p><b>Status text:</b> <span id="A2"></span></p>
+    <p><b>Response:</b> <span id="A3"></span></p>
 
     <script>
       /*       var scope1 = "Maxim";
