@@ -1,0 +1,19 @@
+{
+    "name": "Kagheni",
+    "age": 53,
+    "city": "Kampale",
+    "pets": [
+        {
+            "animal": "dog",
+            "name": "Fido"
+        },
+        {
+            "animal": "cat",
+            "name": "Jojo"
+        },
+        {
+            "animal": "hamstar",
+            "name": "demon"
+        }
+    ]
+}

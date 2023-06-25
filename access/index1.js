@@ -1002,12 +1002,56 @@ function displayCD(i) {
 let getXMLdata = (url) => {
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200 ){
+    if (this.readyState == 4 && this.status == 200) {
       document.getElementById("A1").innerHTML = this.status;
       document.getElementById("A2").innerHTML = this.statusText;
       document.getElementById("A3").innerHTML = this.responseText;
     }
-  }
+  };
   xhttp.open("GET", url, true);
   xhttp.send();
-}
+};
+
+let jsonFunc = () => {
+  // let myObj = { name: "Kagheni", age: 43, city: "Kampala" };
+  // let myJSON = JSON.stringify(myObj);
+  // window.location = "demo_json52a0.html?x=" + myJSON;
+
+  // let myJSON = '{"name":"Kagheni","age":43,"city":"Kampala"}';
+  // let myObj = JSON.parse(myJSON);
+  // document.getElementById("json").innerHTML = myObj.age;
+
+  // let myObj, myJSON, text, obj;
+  // // Storing data:
+  // myObj = { name: "Kagheni", age: 53, city: "Kampala" };
+  // myJSON = JSON.stringify(myObj);
+  // localStorage.setItem("testJSON", myJSON);
+
+  // // Retrieving data:
+  // text = localStorage.getItem("testJSON");
+  // obj = JSON.parse(text);
+  // document.getElementById("json").innerHTML = obj.name;
+
+  // let xmlhttp = new XMLHttpRequest();
+  // xmlhttp.onreadystatechange = function () {
+  //   if (this.readyState === 4 && this.status == 200) {
+  //     let myArr = JSON.parse(this.responseText);
+  //     document.getElementById("json").innerHTML = myArr[2];
+  //   }
+  // };
+  // xmlhttp.open("GET", "json_demo_array.json", true);
+  // xmlhttp.send();
+
+  let text =
+    '{"name":"Kagheni", "age":"()=>{return 53}", "birth":"2001-08-14", "city": "Kampala"}';
+  let obj = JSON.parse(text, (key, value) => {
+    if (key === "birth") {
+      return new Date(value);
+    } else {
+      return value;
+    }
+  });
+  // obj.birth = new Date(obj.birth);
+  obj.age = eval("(" + obj.age + ")");
+  document.getElementById("json").innerHTML = obj.age() + ", " + obj.birth;
+};
