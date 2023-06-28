@@ -1044,14 +1044,67 @@ let jsonFunc = () => {
 
   let text =
     '{"name":"Kagheni", "age":"()=>{return 53}", "birth":"2001-08-14", "city": "Kampala"}';
-  let obj = JSON.parse(text, (key, value) => {
-    if (key === "birth") {
-      return new Date(value);
-    } else {
-      return value;
-    }
-  });
+  // let obj = JSON.parse(text, (key, value) => {
+  //   if (key === "birth") {
+  //     return new Date(value);
+  //   } else {
+  //     return value;
+  //   }
+  // });
   // obj.birth = new Date(obj.birth);
-  obj.age = eval("(" + obj.age + ")");
-  document.getElementById("json").innerHTML = obj.age() + ", " + obj.birth;
+  // obj.age = eval("(" + obj.age + ")");
+
+  let obj = {
+    name: "Kagheni",
+    age: 30,
+    city: "Kampala",
+    cars: [
+      { name: "Ford", models: ["Fiesta", "Focus", "Mustang"] },
+      { name: "BMW", models: ["320", "X3", "X5"] },
+      { name: "Fiat", models: ["500", "Panda"] },
+    ],
+  };
+  // obj.age = obj.age.toString();
+  let myJSON = JSON.stringify(obj);
+  // obj.cars["car2"] = "Merscedes";
+  delete obj.cars[1].models[1];
+  let i,
+    j,
+    x = "";
+  for (i in obj.cars) {
+    x += "<h2>" + obj.cars[i].name + "</h2>";
+    for (j in obj.cars[i].models) {
+      x += obj.cars[i].models[j] + "<br>";
+    }
+  }
+
+  let phpObj,
+    dbParam,
+    xmlhttp,
+    y,
+    txt = "";
+  phpObj = { table: "customers", limit: 10 };
+  dbParam = JSON.stringify(phpObj);
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      // myObj = JSON.parse(this.responseText);
+      txt += "<table border='1'>";
+      // for (y in myObj) {
+      //   txt += myObj[y].name + "<br>";
+      // }
+      // document.getElementById("json").innerHTML = txt;
+    }
+  };
+  xmlhttp.open("GET", "json_demo_db_post.json", true);
+  // xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xmlhttp.send();
+
+  let s = document.createElement("script");
+  s.src = "demo_jsonp21346.json?callback=myDisplayFunction";
+  document.body.appendChild(s);
 };
+
+function myDisplayFunction(myObj) {
+  document.getElementById("json").innerHTML = myObj.name;
+}
