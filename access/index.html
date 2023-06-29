@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript</title>
+    <!-- <script src="../../ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
   <body id="darck" onload="checkCookies()">
     <!-- <button type="button" onclick="time()">Click me to Display Time and Date</button>
@@ -422,17 +424,22 @@
 
     <br /><br />
     <button onclick="xmlFunc()">XML</button>
-    <p id="showCD"></p>
+    <!-- <p id="showCD"></p> -->
     <table id="demo"></table>
 
     <button onclick="getXMLdata('note.xml')">Get XML data</button>
-    <p><b>Status:</b> <span id="A1"></span></p>
+    <!-- <p><b>Status:</b> <span id="A1"></span></p>
     <p><b>Status text:</b> <span id="A2"></span></p>
-    <p><b>Response:</b> <span id="A3"></span></p>
+    <p><b>Response:</b> <span id="A3"></span></p> -->
 
     <button onclick="jsonFunc()">JSON</button>
     <p id="json"></p>
 
+    <button onclick="jqueryFunc()">jQuery</button>
+    <p id="id01" class="intro" style="display: none;">Hello Maxim</p>
+    <p id="id02" class="intro">Hello Kagheni</p>
+    <p id="id03" class="intro">Hello Jenner</p>
+    <p id="jquery"></p>
 
     <script>
       /*       var scope1 = "Maxim";
@@ -451,6 +458,15 @@
       // }
       // // let z = location.hash;
       // document.getElementById("function").innerHTML = window.sumAll(5, 5);
+
+      // let jqueryFunc = () => {
+      //   $(document).ready(function () {
+      //     let myElements = $("#id01");
+      //     $("#demo").text(
+      //       "The text from the id01 paragraph is: " + myElements[0].innerHTML
+      //     );
+      //   });
+      // };
     </script>
 
     <script src="index1.js"></script>

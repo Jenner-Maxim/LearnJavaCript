@@ -1108,3 +1108,18 @@ let jsonFunc = () => {
 function myDisplayFunction(myObj) {
   document.getElementById("json").innerHTML = myObj.name;
 }
+
+let jqueryFunc = () => {
+  let elem2 = document.getElementById("id02").parentNode;
+  // elem2.innerHTML = elem2.nodeName;
+  // elem2.parentNode.removeChild(elem2);
+  $(document).ready(function () {
+    let elem1 = $("#id01").parent();
+    $("#id03").remove();
+    elem1.show();
+    elem1.css("font-size", "35px");
+    $("#jquery").text(
+      "The text from the id01 paragraph is: " + elem1.prop("nodeName")
+    );
+  });
+};
