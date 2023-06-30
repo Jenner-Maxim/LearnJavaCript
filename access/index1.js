@@ -1123,3 +1123,15 @@ let jqueryFunc = () => {
     );
   });
 };
+
+let whereto = () => {
+  document.getElementById("where").innerHTML = "Changed";
+};
+
+let syntax = () => {
+  let x, y, z;
+  x = 3;
+  y = 6;
+  z = x + y;
+  document.getElementById("elem").innerHTML = 'Kagheni Jenner';
+};

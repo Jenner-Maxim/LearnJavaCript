@@ -436,10 +436,29 @@
     <p id="json"></p>
 
     <button onclick="jqueryFunc()">jQuery</button>
-    <p id="id01" class="intro" style="display: none;">Hello Maxim</p>
+    <p id="id01" class="intro" style="display: none">Hello Maxim</p>
     <p id="id02" class="intro">Hello Kagheni</p>
     <p id="id03" class="intro">Hello Jenner</p>
     <p id="jquery"></p>
+
+    <button onclick='document.getElementById("img").src="img/blue.jpg"'>
+      Give the shoes blue color
+    </button>
+    <img id="img" width="100" src="img/yellow.jpg" alt="" />
+    <button onclick="document.getElementById('img').src='img/yellow.jpg'">
+      Give the shoes yellow color
+    </button>
+
+    <button onclick="document.getElementById('style').style.display=''">
+      Style
+    </button>
+    <div id="style" style="display: none">Hey Maxim</div>
+
+    <button onclick="whereto()">Where to Insert JS</button>
+    <div id="where">Change This</div>
+
+    <button onclick="syntax()">JavaScript Syntax</button>
+    <p id="elem"></p>
 
     <script>
       /*       var scope1 = "Maxim";
@@ -467,6 +486,8 @@
       //     );
       //   });
       // };
+
+      // console.log(3 + 2);
     </script>
 
     <script src="index1.js"></script>
