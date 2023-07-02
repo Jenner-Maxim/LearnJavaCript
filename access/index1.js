@@ -1133,5 +1133,10 @@ let syntax = () => {
   x = 3;
   y = 6;
   z = x + y;
-  document.getElementById("elem").innerHTML = 'Kagheni Jenner';
+  document.getElementById("elem").innerHTML = "Kagheni Jenner";
+};
+
+let playAudio = () => {
+  let x = document.getElementById("sound");
+  x.play();
 };
